@@ -13,13 +13,18 @@
         <h3>Autor: 727Lab</h3>
         <h4>Wszelkie prawa zastrzezone</h4>
     </div>
+    
+       {% for post in posts %}
     <div>
-        <p>To jest akapit</p>
-        <em>To jest wyróznony tekst</em>
-        <strong>To jest pogrubiony tekst</strong>
-        <a href="Https://pornhub.com">LINK</a>
+        <h2><a href="">{{ post.title}}</a></h2>
+        <em> {{ post.text|linebreaksbr }}</em>
+        <p>opublikowano: {{ post.publish_date }}</p>
     </div>
-
+        {% endfor %}
+        
+    <div>
+    
+    </div>
 </body>
 
 </html>   
