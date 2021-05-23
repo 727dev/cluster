@@ -1,26 +1,101 @@
 {% load static %}
-    <html lang="pl">
+<html lang="pl">
 
-        <head>
-            <meta charset="UTF-8">
-            <title>Cluster</title>
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-            <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-        </head>
-<body>
-<div class="page-header">
-    <h1><a href="/">Cluster</a> </h1>
-</div>
-<div class="content container">
-    <div class="row">
-        <div class="col-md-8">
-            {% block content %}
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <script src="https://use.fontawesome.com/451851369b.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display-swap" rel="stylesheet">
 
-            {% endblock %}
+    </head>
+    <body>
+    <nav class="navbar navbar-light" style="background-color: #061A40;">
+        <a class="top-menu" href="/">Facebook</a>
+        <div class="plus">
+            <div class="row">
+                {% if user.is_authenticated %}
+                <a href="{% url 'post_new' %}" class="top-menu"><span class="bi bi-plus-circle-fill"></span></a>
+                {% endif %}
+            </div>    
         </div>
-    </div>
-</div>
+    </nav>
+        <div class="all">
+    <nav class="navbar navbar-light bg-light">
+        <div class="page-header">
+                <img src="/media/images/logo.png" height="15%">
+            <a class="nav-link" href="/"><b>Strona główna</b></a>
+            <a class="nav-link" href="#"><b>Najnowsze artykuły</b></a>
+            <a class="nav-link" href="#"><b>Dołącz do nasz</b></a>
+            <a class="nav-link" href="#"><b>Kontakt</b></a>
+        </div>
+        <div class="gora">
+        <p class="title"><b></b></p>
+        <img class="baner" src="/media/images/baner.jpg"><br/><br/><br/>
+        </div>
+    </nav>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="stopka">
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                    <h6><b>O nas</b></h6>
+                    <p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi molestias enim, totam quaerat tempore facilis quo doloribus fuga voluptatibus voluptatum atque quos non debitis temporibus similique, voluptas, officiis culpa maxime?</p>
+                    </div>
 
-</body>
+                    <div class="col-xs-6 col-md-2">
+                        <h6><b>Kategorie</b></h6>
+                        <ul class="footer-liinks">
+                            <li><a href="/">Penis</a></li>
+                            <li><a href="/">Pyton</a></li>
+                            <li><a href="/">Naganiacz</a></li>
+                            <li><a href="/">Siusiak</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-6 col-md-2">
+                        <h6><b>Szybkie linki</b></h6>
+                        <ul class="footer-links">
+                            <li><a href="/">O nas</a></li>
+                            <li><a href="/">Kontkat</a></li>
+                            <li><a href="/">Współpraca</a></li>
+                            <li><a href="/">Ciasteczka</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-6 col-xs-12">
+                            <p class="copyright-text">Copyright @ 2021 All Rights Reserved by
+                                <a href="#">727Dev</a>
+                            </p>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <ul class="social-icons">
+                                <li><a class="facebook" href="#"><i class="fa fa-facebook fa-2x"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        </div>    
+    </body>
 
 </html>   
